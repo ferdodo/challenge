@@ -15,7 +15,8 @@ if (scoreFromUrl) {
 }
 
 // @ts-ignore
-window.registerScore = (player: string, puzzle: string, score: number) => {
+window.registerScore = (puzzle: string, score: number) => {
+	const player = context.nicknameStorage.read();
 	context.challengeResultStorage.save({ [player]: { [puzzle]: score } });
 };
 
