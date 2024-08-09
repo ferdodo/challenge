@@ -1,6 +1,8 @@
+import { html } from "htm/preact";
 import { render } from "preact";
 import { App } from "./components";
 import "crumbs-design-system";
+import { appContext } from "./app-context";
 import type { FrontContext } from "./types";
 import { createChallengeContext } from "./utils";
 import { getScoreFromUrl } from "./utils";
@@ -17,4 +19,7 @@ window.registerScore = (player: string, puzzle: string, score: number) => {
 	context.challengeResultStorage.save({ [player]: { [puzzle]: score } });
 };
 
-render(App(context), document.body);
+render(
+	html`<${appContext.Provider} value=${context}> <${App} /> <//>`,
+	document.body,
+);
