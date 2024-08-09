@@ -7,7 +7,7 @@ export function createNicknameStorage(): NicknameStorage {
 
 	return {
 		read(): string {
-			return localStorage.getItem("nickname") || "Votre pseudo";
+			return localStorage.getItem("nickname") || "";
 		},
 		save(nickname: string) {
 			subject.next(nickname);
