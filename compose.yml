@@ -1,0 +1,6 @@
+services:
+  front:
+    build:
+      context: .
+    ports:
+      - "7843:5173"
