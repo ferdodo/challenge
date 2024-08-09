@@ -1,10 +1,11 @@
 {
 	"scripts": {
-		"build": "tsc && biome ci .",
+		"build": "tsc && biome ci . && vite build",
 		"start": "vite --host"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^1.8.3",
+		"@types/node": "^22.1.0",
 		"crumbs-design-system": "^1.0.0",
 		"daily-prng": "^1.3.0",
 		"htm": "^3.1.1",
